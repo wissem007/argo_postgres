@@ -14,6 +14,21 @@ spec:
     path: /mnt/data
   storageClassName: manual
 ---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: postgres
+  name: postgres-pv-claim
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: manual
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
