@@ -72,4 +72,14 @@ spec:
   selector:
     app: postgres
   type: NodePort
-
+---
+apiVersion: v1
+data:
+  POSTGRES_DB: postgresdb
+  POSTGRES_PASSWORD: test123
+  POSTGRES_USER: admin
+kind: ConfigMap
+metadata:
+  labels:
+    app: postgres
+  name: postgres-config
